@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
+import LoginForm from "./LoginForm";
 
 const LoginPage: React.FC = () => {
-    return (
-        <div>
-            <h1>Login Page</h1>
-            {/* Add your login form here */}
-        </div>
-    );
+  return (
+    <div className="flex items-center justify-center vertical-center">
+      <LoginForm />
+    </div>
+  );
 };
 
 export default LoginPage;

@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
+import ListsTab from "./ListsTab";
+import { fetchCurrentUserIds, fetchLikedMembers } from "../actions/likeActions";
 
-const ListsPage: React.FC = () => {
-    return (
-        <div>
-            <h1>Lists Page</h1>
-            <p>This is the lists page.</p>
-        </div>
-    );
+const ListsPage: React.FC<{
+  searchParams: { type: string };
+}> = async ({ searchParams }: { searchParams: { type: string } }) => {
+  const likeIds = await fetchCurrentUserIds();
+  const members = await fetchLikedMembers(searchParams.type);
+
+  return (
+    <div>
+      <ListsTab members={members} likeIds={likeIds} />
+    </div>
+  );
 };
 
 export default ListsPage;

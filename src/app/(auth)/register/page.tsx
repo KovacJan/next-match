@@ -1,20 +1,10 @@
 import React from 'react';
+import RegisterForm from './RegisterForm';
 
 const RegisterPage: React.FC = () => {
     return (
-        <div>
-            <h1>Register</h1>
-            <form>
-                <div>
-                    <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" name="username" />
-                </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" />
-                </div>
-                <button type="submit">Register</button>
-            </form>
+        <div className='flex items-center justify-center vertical-center'>
+            <RegisterForm />
         </div>
     );
 };
